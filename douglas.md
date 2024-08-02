@@ -91,7 +91,7 @@ Guest (ambiente QEMU/KVM)
 ## 1.2) Walktrough do Horizontal Pod Scaling
 
 ### 1.2.1) Verificando a instalação do kubectl e habilitando o metrics-server no minikube
-'''
+```
 douglas@minikube-lubuntu:~$ kubectl version
 
 Client Version: v1.30.3
@@ -110,7 +110,7 @@ You can view the list of minikube maintainers at:
 https://github.com/kubernetes/minikube/blob/master/OWNERS
 
 🌟 The 'metrics-server' addon is enabled
-'''
+```
 
 ### 1.2.2) Criando o .yaml da aplicação
 '''
