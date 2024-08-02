@@ -113,7 +113,7 @@ https://github.com/kubernetes/minikube/blob/master/OWNERS
 ```
 
 ### 1.2.2) Criando o .yaml da aplicação
-'''
+```
 douglas@minikube-lubuntu:~$ mkdir intermediate_test
 
 douglas@minikube-lubuntu:~$ cd intermediate_test/
@@ -191,10 +191,10 @@ ports:
 selector:
 
 run: php-apache
-'''
+```
 
 ### 1.2.3) Iniciando o minikube e efetuando o deploy da aplicação php-apache
-'''
+```
 douglas@minikube-lubuntu:~/intermediate_test$ minikube start
 --driver=docker
 
@@ -243,18 +243,18 @@ https://github.com/kubernetes/minikube/blob/master/OWNERS
 ▪ Using image registry.k8s.io/metrics-server/metrics-server:v0.7.1
 
 🌟 The 'metrics-server' addon is enabled
-'''
+```
 
-'''
+```
 douglas@minikube-lubuntu:~/intermediate_test$ kubectl apply -f
 php-apache.yaml
 
 deployment.apps/php-apache created
 
 service/php-apache created
-'''
+```
 ### 1.2.4) Habilitando o HPA
-'''
+```
 douglas@minikube-lubuntu:~/intermediate_test$ kubectl autoscale
 deployment php-apache --cpu-percent=50 --min=1 --max=10
 
@@ -278,10 +278,10 @@ douglas@minikube-lubuntu:~/intermediate_test$ kubectl get hpa php-apache
 NAME REFERENCE TARGETS MINPODS MAXPODS REPLICAS AGE
 
 php-apache Deployment/php-apache cpu: 19%/50% 1 10 1 105s
-'''
+```
 
 ### 1.2.5) Testando o HPA
-'''
+```
 douglas@minikube-lubuntu:~/intermediate_test$ kubectl get hpa php-apache
 --watch
 
@@ -326,10 +326,10 @@ php-apache Deployment/php-apache cpu: 0%/50% 1 10 7 18m
 php-apache Deployment/php-apache cpu: 0%/50% 1 10 1 18m
 
 php-apache Deployment/php-apache cpu: 0%/50% 1 10 1 19m
-'''
+```
 
 ### 1.2.6) Gerador de carga (terminal paralelo)
-'''
+```
 
 douglas@minikube-lubuntu:~$ kubectl run -i --tty load-generator --rm
 --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do
@@ -338,7 +338,7 @@ wget -q -O- http://php-apache; done"
 If you don't see a command prompt, try pressing enter.
 
 OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK
-'''
+```
 
 # 2) Walktrough do Horizontal Pod Scaling
 
@@ -352,7 +352,7 @@ OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK
 ## 2.2) Criando o cluster
 
 ### 2.2.1) Criando a VPC
-'''
+```
 douglas@douglas-ipt:~$ aws cloudformation create-stack --region
 us-east-1 --stack-name douglas-eks-vpc-stack --template-url
 https://s3.us-west-2.amazonaws.com/amazon-eks/cloudformation/2020-10-29/amazon-eks-vpc-private-subnets.yaml
@@ -363,29 +363,29 @@ https://s3.us-west-2.amazonaws.com/amazon-eks/cloudformation/2020-10-29/amazon-e
 "arn:aws:cloudformation:us-east-1:956590891766:stack/douglas-eks-vpc-stack/91d92b40-504c-11ef-b716-12a6a9bda809"
 
 }
-'''
+```
 ### 2.2.2) Criando o cluster usando o Role LabRole
 
 <img src="pictures/douglas-cluster.png"
 style="width:17cm;height:8.712cm" />
 
 ### 2.2.3) Atualizando o kubeconfig local
-'''
+```
 douglas@douglas-ipt:~$ aws eks update-kubeconfig --region us-east-1
 --name douglas-cluster
 
 Added new context
 arn:aws:eks:us-east-1:956590891766:cluster/douglas-cluster to
 /home/douglas/.kube/config
-'''
+```
 
-'''
+```
 douglas@douglas-ipt:~$ kubectl get svc
 
 NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE
 
 kubernetes ClusterIP 10.100.0.1 \<none\> 443/TCP 8m11s
-'''
+```
 
 ### 2.2.4) Criando os nós via instâncias EC2 – Role LabRole
 
@@ -403,14 +403,14 @@ Foi escolhida a aplicaçao PHP-Apache para efetuar comparações com o item
 1
 
 ### 2.3.1) Criando um namespace do Kubernetes
-'''
+```
 douglas@douglas-ipt:~$ kubectl create namespace php-apache-douglas
 
 namespace/php-apache-douglas created
-'''
+```
 
 ### 2.3.2) Criando o yaml de deploy do php-apache
-'''
+```
 
 douglas@douglas-ipt:~$ cat php-apache.yaml
 
@@ -483,20 +483,20 @@ ports:
 selector:
 
 run: php-apache
-'''
+```
 
 ### 2.3.3) Fazendo o deploy
-'''
+```
 
 douglas@douglas-ipt:~$ kubectl apply -f php-apache.yaml
 
 deployment.apps/php-apache created
 
 service/php-apache created
-'''
+```
 
 ### 2.3.4) Criando e aplicando o serviço
-'''
+```
 
 douglas@douglas-ipt:~$ cat php-apache-service.yaml
 
@@ -527,18 +527,18 @@ ports:
 port: 80
 
 targetPort: 80
-'''
+```
 
-'''
+```
 
 douglas@douglas-ipt:~$ kubectl apply -f php-apache-service.yaml
 
 service/php-apache-service created
-'''
+```
 
 ### 2.3.5) Verificando os recursos, serviços e pods
 
-'''
+```
 douglas@douglas-ipt:~$ kubectl get all
 
 NAME READY STATUS RESTARTS AGE
@@ -558,9 +558,9 @@ deployment.apps/php-apache 1/1 1 1 15m
 NAME DESIRED CURRENT READY AGE
 
 replicaset.apps/php-apache-678865dd57 1 1 1 15m
-'''
+```
 
-'''
+```
 douglas@douglas-ipt:~$ kubectl -n php-apache-douglas describe service
 php-apache-service
 
@@ -593,12 +593,12 @@ Endpoints: \<none\>
 Session Affinity: None
 
 Events: \<none\>
-'''
+```
 
 ## 2.4) Habilitando o KubernetesMetrics Server
 
 ### 2.4.1) Efeutando o deploy
-'''
+```
 douglas@douglas-ipt:~$ kubectl apply -f
 https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
 
@@ -622,10 +622,10 @@ service/metrics-server created
 deployment.apps/metrics-server created
 
 apiservice.apiregistration.k8s.io/v1beta1.metrics.k8s.io created
-'''
+```
 
 ### 2.4.2) Verificando o deploy
-'''
+```
 douglas@douglas-ipt:~$ kubectl get deployment metrics-server -n
 kube-system
 
@@ -639,9 +639,9 @@ kube-system
 NAME READY UP-TO-DATE AVAILABLE AGE
 
 metrics-server 1/1 1 1 55s
-'''
+```
 ### 2.4.3) Testando o metrics
-'''
+```
 douglas@douglas-ipt:~$ kubectl top nodes
 
 NAME CPU(cores) CPU% MEMORY(bytes) MEMORY%
@@ -649,28 +649,28 @@ NAME CPU(cores) CPU% MEMORY(bytes) MEMORY%
 ip-192-168-2-158.ec2.internal 37m 1% 549Mi 16%
 
 ip-192-168-201-110.ec2.internal 27m 1% 473Mi 14%
-'''
+```
 ## 2.5) Habilitando o HPA
 
 ### 2.5.1) Criando o HPA
-'''
+```
 douglas@douglas-ipt:~$ kubectl autoscale deployment php-apache
 --cpu-percent=50 --min=1 --max=10
 
 horizontalpodautoscaler.autoscaling/php-apache autoscaled
-'''
+```
 ### 2.5.2) Verificando o HPA
-'''
+```
 douglas@douglas-ipt:~$ kubectl get hpa
 
 NAME REFERENCE TARGETS MINPODS MAXPODS REPLICAS AGE
 
 php-apache Deployment/php-apache cpu: 0%/50% 1 10 1 31s
-'''
+```
 ## 2.6) Observando o trabalho do HPA na AWS EKS
 
 ### 2.6.1) Criando o serviço de carga
-'''
+```
 douglas@douglas-ipt:~$ kubectl run -i \\
 
 --tty load-generator \\
@@ -684,9 +684,9 @@ douglas@douglas-ipt:~$ kubectl run -i \\
 If you don't see a command prompt, try pressing enter.
 
 OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK!OK
-'''
+```
 ### 2.6.2) Observando os pods
-'''
+```
 douglas@douglas-ipt:~$ kubectl get hpa php-apache --watch
 
 NAME REFERENCE TARGETS MINPODS MAXPODS REPLICAS AGE
@@ -718,7 +718,7 @@ php-apache Deployment/php-apache cpu: 41%/50% 1 10 7 7m31s
 php-apache Deployment/php-apache cpu: 40%/50% 1 10 7 7m46s
 
 php-apache Deployment/php-apache cpu: 37%/50% 1 10 7 8m1s
-'''
+```
 ### 2.6.3) Observando no AWS EKS
 
 <img src="pictures/hpa-1.png"
@@ -739,7 +739,7 @@ diminuírem
 > even when the current CPU percentage is 0 percent. The timeframe is
 > modifiable. For more information, see Horizontal Pod Autoscaler in the
 > Kubernetes documentation.
-'''
+```
 php-apache Deployment/php-apache cpu: 38%/50% 1 10 7 9m1s
 
 php-apache Deployment/php-apache cpu: 42%/50% 1 10 7 9m16s
@@ -771,7 +771,7 @@ php-apache Deployment/php-apache cpu: 0%/50% 1 10 6 16m
 php-apache Deployment/php-apache cpu: 0%/50% 1 10 3 16m
 
 php-apache Deployment/php-apache cpu: 0%/50% 1 10 1 16m
-'''
+```
 <img src="pictures/hpa-events.png"
 style="width:17cm;height:7.768cm" />
 
