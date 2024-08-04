@@ -123,74 +123,40 @@ douglas@minikube-lubuntu:~/intermediate_test$ nano php-apache.yaml
 douglas@minikube-lubuntu:~/intermediate_test$ cat php-apache.yaml
 
 apiVersion: apps/v1
-
 kind: Deployment
-
 metadata:
-
-name: php-apache
-
+  name: php-apache
 spec:
-
-selector:
-
-matchLabels:
-
-run: php-apache
-
-template:
-
-metadata:
-
-labels:
-
-run: php-apache
-
-spec:
-
-containers:
-
- - name: php-apache
-
-image: registry.k8s.io/hpa-example
-
-ports:
-
- - containerPort: 80
-
-resources:
-
-limits:
-
-cpu: 500m
-
-requests:
-
-cpu: 200m
-
+  selector:
+    matchLabels:
+      run: php-apache
+  template:
+    metadata:
+      labels:
+        run: php-apache
+    spec:
+      containers:
+      - name: php-apache
+        image: registry.k8s.io/hpa-example
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: 500m
+          requests:
+            cpu: 200m
 ---
-
 apiVersion: v1
-
 kind: Service
-
 metadata:
-
-name: php-apache
-
-labels:
-
-run: php-apache
-
+  name: php-apache
+  labels:
+    run: php-apache
 spec:
-
-ports:
-
- - port: 80
-
-selector:
-
-run: php-apache
+  ports:
+  - port: 80
+  selector:
+    run: php-apache
 ```
 
 ### 1.2.3) Iniciando o minikube e efetuando o deploy da aplicação php-apache
