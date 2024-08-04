@@ -1,6 +1,7 @@
 # Aplicação de exemplo para teste de HPA do Kubernetes com Wildfly e Java
 
-A aplicação é uma WEB API que gera aleatoriamente um comprimento entre 32 bits e 2048 bits e procura por um número primo do tamanho obtido.
+A aplicação é uma WEB API que gera aleatoriamente um comprimento entre 32 bits e 2048 bits e procura por um número primo do tamanho obtido. Em alguns casos o algoritmo aloca 500 MB de memória por 20 s (mais o tempo do Garbage Colector).
+
 Objetivo: gerar carga de processamento com memórias e tempos aleatórios.
 
 API GET: `/inicia-teste`
@@ -68,5 +69,11 @@ $ kubectl run -i --tty load-generator --rm --image=busybox:1.28 --restart=Never 
 ```
 
 Usar Ctrl + C para parar o teste.
+
+### HPA com yaml
+Aplicar o `autoscaling.yaml` e fazer o mesmo que no item anterior:
+```
+$ kubectl apply -f autoscaling.yaml
+```
 
 
