@@ -30,7 +30,7 @@ sudo mv kubectl /usr/local/bin/
 sudo apt install neofetch
 neofetch
 ```
-### Criação da pasta com arquivos da pasta /php-apache-web-server/ e mudança de diretório
+### Criação da pasta com arquivos da pasta [/php-apache-web-server/](https://github.com/douglasbcavalcante/cluster_kubernetes/tree/main/php-apache-web-server) e mudança de diretório
 ```
 mkdir AvaliacaoInter
 cd AvaliacaoInter/
@@ -76,7 +76,7 @@ kubectl get svc
 kubectl create namespace php-apache-elielder
 ```
 
-### Implementação do servidor web com arquivos da pasta /php-apache-web-server/ para criação de servidor com imagem kubernetes e serviço associado ao servidor
+### Implementação do servidor web com arquivos da pasta [/php-apache-web-server/](https://github.com/douglasbcavalcante/cluster_kubernetes/tree/main/php-apache-web-server) para criação de servidor com imagem kubernetes e serviço associado ao servidor
 ```
 cd AvaliacaoInter/
 kubectl apply -f php-apache.yaml
