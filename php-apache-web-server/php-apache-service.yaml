@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: php-apache-service
+  namespace: php-apache-elielder
+  labels:
+    app: php-apache
+spec:
+  selector:
+    app: php-apache
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
