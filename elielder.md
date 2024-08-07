@@ -8,7 +8,7 @@ Nº USP: 15613280
 
 Avaliação Intermediária
 
-## Roteiro de Implementação: [Roteiro com Telas em PDF](https://drive.google.com/file/d/1ZcuhRVWG_DToJcPEgff6Eetlw8S0wHwt/view?usp=drive_link)
+## [Roteiro de Implementação com Telas](https://drive.google.com/file/d/1ZcuhRVWG_DToJcPEgff6Eetlw8S0wHwt/view?usp=drive_link)
 
 # Comandos de Implementações (Local-Baremetal e Nuvem-AWS)
 
