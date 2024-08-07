@@ -44,7 +44,26 @@ kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=10
 kubectl get hpa
 kubectl run -i --tty load-generator --rm --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://php-apache; done"
 kubectl get hpa php-apache --watch
-``
+```
 ## Implementação Nuvem-AWS
+
+Partindo com o docker.io, minikube e kubectl instalados, deve-se prosseguir com as outras configurações e implementações.
+
+### Instalação, verificação e configuração do AWS
+```
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install --bin-dir /usr/local/bin --install-dir /usr/local/aws-cli --update
+aws --version
+```
+Para configuração das credenciais, deve-se seguir o roteiro que está no link acima com os seguintes passos:
+1- Ir até a CLI AWS e procurar pelo arquivo: /~/.aws/credentials;
+2- Copiar o conteúdo para a máquina local no mesmo caminho: /~/.aws/credentials.
+
+Verifique se está correto com o seguinte comando:
+```
+aws sts get-caller-identity
+```
+
 
 
