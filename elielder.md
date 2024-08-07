@@ -30,7 +30,7 @@ sudo mv kubectl /usr/local/bin/
 sudo apt install neofetch
 neofetch
 ```
-### Criação da pasta com arquivos da pasta php-apache-web-server e mudança de diretório
+### Criação da pasta com arquivos da pasta /php-apache-web-server/ e mudança de diretório
 ```
 mkdir AvaliacaoInter
 cd AvaliacaoInter/
@@ -57,13 +57,41 @@ sudo ./aws/install --bin-dir /usr/local/bin --install-dir /usr/local/aws-cli --u
 aws --version
 ```
 Para configuração das credenciais, deve-se seguir o roteiro que está no link acima com os seguintes passos:
-1- Ir até a CLI AWS e procurar pelo arquivo: /~/.aws/credentials;
-2- Copiar o conteúdo para a máquina local no mesmo caminho: /~/.aws/credentials.
+1. Ir até a CLI AWS e procurar pelo arquivo: /~/.aws/credentials;
+2. Copiar o conteúdo para a máquina local no mesmo caminho: /~/.aws/credentials.
 
-Verifique se está correto com o seguinte comando:
+Verifique se a configuração está correta com o seguinte comando:
 ```
 aws sts get-caller-identity
 ```
 
+### Configuração do minikube + kubectl + aws (Esse processo está em conjunto com o processo de criação do cluster AWS EKS com EC2, como descrito no roteiro)
+```
+aws cloudformation create-stack --region us-east-1 --stack-name elielder-eks-vpc-stack --template-url https://s3.us-west-2.amazonaws.com/amazon-eks/cloudformation/2020-10-29/amazon-eks-vpc-private-subnets.yaml
+minikube start --driver=docker
+minikube addons enable metrics-server
+kubectl get nodes -o wide
+aws eks update-kubeconfig --region us-east-1 --name elielder-cluster
+kubectl get svc
+kubectl create namespace php-apache-elielder
+```
 
+### Implementação do servidor web com arquivos da pasta /php-apache-web-server/ para criação de servidor com imagem kubernetes e serviço associado ao servidor
+```
+cd AvaliacaoInter/
+kubectl apply -f php-apache.yaml
+kubectl apply -f php-apache-service.yaml
+```
 
+### Configuração do ambiente kubernetes para vínculo com AWS e deployment do servidor web com autoescalonamento horizontal
+```
+kubectl get all
+kubectl -n php-apache-elielder describe service php-apache-service
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+kubectl get deployment metrics-server -n kube-system
+kubectl top nodes
+kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=10
+kubectl get hpa
+kubectl run -i     --tty load-generator     --rm --image=busybox     --restart=Never     -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://php-apache; done"
+kubectl get hpa php-apache --watch
+```
