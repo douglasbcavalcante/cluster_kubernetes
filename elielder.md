@@ -8,4 +8,10 @@ Nº USP: 15613280
 
 Avaliação Intermediária
 
-# 1) 
+## Roteiro de Implementação: https://drive.google.com/file/d/1ZcuhRVWG_DToJcPEgff6Eetlw8S0wHwt/view?usp=drive_link
+
+# Comandos de Implementações (Local - Baremetal e Nuvem - AWS)
+
+## Implementação Local
+
+## Implementação Nuvem
