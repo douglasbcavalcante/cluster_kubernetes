@@ -10,8 +10,10 @@ Avaliação Intermediária
 
 ## Roteiro de Implementação: https://drive.google.com/file/d/1ZcuhRVWG_DToJcPEgff6Eetlw8S0wHwt/view?usp=drive_link
 
-# Comandos de Implementações (Local - Baremetal e Nuvem - AWS)
+# Comandos de Implementações (Local-Baremetal e Nuvem-AWS)
 
 ## Implementação Local
+
+### Instalação do docker.io e minikube
 
 ## Implementação Nuvem
