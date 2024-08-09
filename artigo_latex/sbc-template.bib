@@ -1,0 +1,195 @@
+
+@online{kubernetes_horizontalpodautoscaler_nodate,
+	title = {{Horizontal Pod Autoscaler Walkthrough}},
+	howpublished = {https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/},
+	abstract = {A {HorizontalPodAutoscaler} ({HPA} for short) automatically updates a workload resource (such as a Deployment or {StatefulSet}), with the aim of automatically scaling the workload to match demand. Horizontal scaling means that the response to increased load is to deploy more Pods. This is different from vertical scaling, which for Kubernetes would mean assigning more resources (for example: memory or {CPU}) to the Pods that are already running for the workload.},
+	author = {{Kubernetes}},
+	urldate = {2024-08-02},
+	file = {Snapshot:/home/douglas/snap/zotero-snap/common/Zotero/storage/K3FEH2AY/horizontal-pod-autoscale-walkthrough.html:text/html},
+    year = {2024}
+}
+
+@online{amazon_getting_nodate,
+	title = {Getting started with Amazon {EKS} – {AWS} Management Console and {AWS} {CLI} - Amazon {EKS}},
+	howpublished = {https://docs.aws.amazon.com/eks/latest/userguide/getting-started-console.html},
+	author = {{Amazon}},
+	urldate = {2024-08-02},
+	file = {Getting started with Amazon EKS – AWS Management Console and AWS CLI - Amazon EKS:/home/douglas/snap/zotero-snap/common/Zotero/storage/HXJ3NTB7/getting-started-console.html:text/html},
+    year = {2024}
+}
+
+@online{amazon_deploy_nodate,
+	title = {Deploy a sample application - {Amazon {EKS}}},
+	howpublished = {https://docs.aws.amazon.com/eks/latest/userguide/sample-deployment.html},
+	author = {{Amazon}},
+	urldate = {2024-08-02},
+	file = {Deploy a sample application - Amazon EKS:/home/douglas/snap/zotero-snap/common/Zotero/storage/C79GV6IS/sample-deployment.html:text/html},
+    year = {2024}
+}
+
+@online{amazon_view_nodate,
+	title = {View resource usage with the {KubernetesMetrics} Server - Amazon {EKS}},
+	howpublished = {https://docs.aws.amazon.com/eks/latest/userguide/metrics-server.html},
+	author = {{Amazon}},
+	urldate = {2024-08-02},
+	file = {View resource usage with the KubernetesMetrics Server - Amazon EKS:/home/douglas/snap/zotero-snap/common/Zotero/storage/8ZJTRFBR/metrics-server.html:text/html},
+    year = {2024}
+}
+
+@online{amazon_scale_nodate,
+	title = {Scale pod deployments with Horizontal Pod Autoscaler - Amazon {EKS}},
+	howpublished = {https://docs.aws.amazon.com/eks/latest/userguide/horizontal-pod-autoscaler.html},
+	author = {{Amazon}},
+	urldate = {2024-08-02},
+	file = {Scale pod deployments with Horizontal Pod Autoscaler - Amazon EKS:/home/douglas/snap/zotero-snap/common/Zotero/storage/Y5SGEUNI/horizontal-pod-autoscaler.html:text/html},
+    year = {2024}
+}
+
+@article{nguyen_horizontal_2020,
+	title = {Horizontal Pod Autoscaling in Kubernetes for Elastic Container Orchestration},
+	volume = {20},
+	issn = {1424-8220},
+	url = {https://www.mdpi.com/1424-8220/20/16/4621},
+	doi = {10.3390/s20164621},
+	abstract = {Kubernetes, an open-source container orchestration platform, enables high availability and scalability through diverse autoscaling mechanisms such as Horizontal Pod Autoscaler ({HPA}), Vertical Pod Autoscaler and Cluster Autoscaler. Amongst them, {HPA} helps provide seamless service by dynamically scaling up and down the number of resource units, called pods, without having to restart the whole system. Kubernetes monitors default Resource Metrics including {CPU} and memory usage of host machines and their pods. On the other hand, Custom Metrics, provided by external software such as Prometheus, are customizable to monitor a wide collection of metrics. In this paper, we investigate {HPA} through diverse experiments to provide critical knowledge on its operational behaviors. We also discuss the essential difference between Kubernetes Resource Metrics ({KRM}) and Prometheus Custom Metrics ({PCM}) and how they affect {HPA}’s performance. Lastly, we provide deeper insights and lessons on how to optimize the performance of {HPA} for researchers, developers, and system administrators working with Kubernetes in the future.},
+	pages = {4621},
+	number = {16},
+	journaltitle = {Sensors},
+	author = {Nguyen, Thanh-Tung and Yeom, Yu-Jin and Kim, Taehong and Park, Dae-Heon and Kim, Sehan},
+	urldate = {2024-08-02},
+	date = {2020-01},
+	keywords = {cloud computing, container orchestration, custom metrics, Docker, edge computing, Horizontal Pod Autoscaling ({HPA}), Kubernetes, Prometheus, resource metrics},
+    year = {2020}
+}
+
+@inproceedings{koziolek_lightweight_2023,
+	location = {New York, {NY}, {USA}},
+	title = {Lightweight Kubernetes Distributions: A Performance Comparison of {MicroK}8s, k3s, k0s, and Microshift},
+	isbn = {9798400700682},
+	url = {https://doi.org/10.1145/3578244.3583737},
+	doi = {10.1145/3578244.3583737},
+	series = {{ICPE} '23},
+	shorttitle = {Lightweight Kubernetes Distributions},
+	abstract = {With containers becoming a prevalent method of software deployment, there is an increasing interest to use container orchestration frameworks not only in data centers, but also on resource-constrained hardware, such as Internet-of-Things devices, Edge gateways, or developer workstations. Consequently, software vendors have released several lightweight Kubernetes (K8s) distributions for container orchestration in the last few years, but it remains difficult for software developers to select an appropriate solution. Existing studies on lightweight K8s distribution performance tested only small workloads, showed inconclusive results, and did not cover recently released distributions. The contribution of this paper is a comparison of {MicroK}8s, k3s, k0s, and {MicroShift}, investigating their minimal resource usage as well as control plane and data plane performance in stress scenarios. While k3s and k0s showed by a small amount the highest control plane throughput and {MicroShift} showed the highest data plane throughput, usability, security, and maintainability are additional factors that drive the decision for an appropriate distribution.},
+	pages = {17--29},
+	booktitle = {Proceedings of the 2023 {ACM}/{SPEC} International Conference on Performance Engineering},
+	publisher = {Association for Computing Machinery},
+	author = {Koziolek, Heiko and Eskandani, Nafise},
+	urldate = {2024-08-01},
+	date = {2023},
+    year = {2023}
+}
+
+@inproceedings{kapocius_performance_2020,
+	title = {Performance Studies of Kubernetes Network Solutions},
+	url = {https://ieeexplore.ieee.org/abstract/document/9108894},
+	doi = {10.1109/eStream50540.2020.9108894},
+	abstract = {Containers and microservices applications are complex and their orchestration is inevitable. As of today, Kubernetes is the most popular choice for container orchestration. However, there are various Kubernetes network implementations based on different {CNI} (Container Networking Interface) plugins which functionalities and performance could differ. In this paper 4 {CNCF} (Cloud Native Computing Foundation) recommended {CNI} plugins are benchmarked in a physical datacentre environment. {CNI} plugins performance is evaluated in terms of latency and average {TCP} throughput for various Maximum Transmission Unit ({MTU}) sizes, the different number of aggregated network interfaces, and different interfaces segmentation offloading conditions. Plugins' performance is compared to baremetal baseline results.},
+	eventtitle = {2020 {IEEE} Open Conference of Electrical, Electronic and Information Sciences ({eStream})},
+	pages = {1--6},
+	booktitle = {2020 {IEEE} Open Conference of Electrical, Electronic and Information Sciences ({eStream})},
+	author = {Kapočius, Narūnas},
+	urldate = {2024-08-02},
+	date = {2020-04},
+	keywords = {aggregation, Benchmark testing, {CNI}, Conferences, Container Network Interface, Containers, Data centers, Degradation, Kubernetes, Microservice architectures, teaming, Throughput},
+	file = {IEEE Xplore Abstract Record:/home/douglas/snap/zotero-snap/common/Zotero/storage/F65I6EYT/9108894.html:text/html;IEEE Xplore Full Text PDF:/home/douglas/snap/zotero-snap/common/Zotero/storage/JYDAMSUQ/Kapočius - 2020 - Performance Studies of Kubernetes Network Solution.pdf:application/pdf},
+    year = {2020}
+}
+
+@article{decker_performance_2022,
+	title = {Performance Evaluation of Open-Source Serverless Platforms for Kubernetes},
+	volume = {15},
+	rights = {http://creativecommons.org/licenses/by/3.0/},
+	issn = {1999-4893},
+	url = {https://www.mdpi.com/1999-4893/15/7/234},
+	doi = {10.3390/a15070234},
+	abstract = {Serverless computing has grown massively in popularity over the last few years, and has provided developers with a way to deploy function-sized code units without having to take care of the actual servers or deal with logging, monitoring, and scaling of their code. High-performance computing ({HPC}) clusters can profit from improved serverless resource sharing capabilities compared to reservation-based systems such as Slurm. However, before running self-hosted serverless platforms in {HPC} becomes a viable option, serverless platforms must be able to deliver a decent level of performance. Other researchers have already pointed out that there is a distinct lack of studies in the area of comparative benchmarks on serverless platforms, especially for open-source self-hosted platforms. This study takes a step towards filling this gap by systematically benchmarking two promising self-hosted Kubernetes-based serverless platforms in comparison. While the resulting benchmarks signal potential, they demonstrate that many opportunities for performance improvements in serverless computing are being left on the table.},
+	pages = {234},
+	number = {7},
+	journaltitle = {Algorithms},
+	author = {Decker, Jonathan and Kasprzak, Piotr and Kunkel, Julian Martin},
+	urldate = {2024-08-02},
+	date = {2022-07},
+	langid = {english},
+	note = {Number: 7
+Publisher: Multidisciplinary Digital Publishing Institute},
+	keywords = {benchmark, {HPC}, Kubernetes, open source, performance, self-hosted, serverless},
+	file = {Full Text PDF:/home/douglas/snap/zotero-snap/common/Zotero/storage/FJBSLJP4/Decker et al. - 2022 - Performance Evaluation of Open-Source Serverless P.pdf:application/pdf},
+    year = {2022}
+}
+
+
+@online{gupta_kubernetes_2023,
+	title = {Kubernetes Autoscaling: {CPU} vs Memory},
+	url = {https://medium.com/@g22shubham/kubernetes-autoscaling-cpu-vs-memory-44c769b7d102},
+	shorttitle = {Kubernetes Autoscaling},
+	abstract = {In this blog, we will discuss the pods configurations for autoscaling and the differences between {CPU} autoscaling and memory autoscaling in…},
+	titleaddon = {Medium},
+	author = {Gupta, Shubham},
+	urldate = {2024-08-04},
+	date = {2023-02-02},
+	langid = {english},
+	file = {Snapshot:/home/douglas/snap/zotero-snap/common/Zotero/storage/7AJSKC49/kubernetes-autoscaling-cpu-vs-memory-44c769b7d102.html:text/html},
+	year={2023}
+}
+
+@online{llcNodeJsVs2024,
+  title = {Node.Js vs. {{Java}}: {{Which One}} Is {{Better}} for {{Backend Development}}?},
+  shorttitle = {Node.Js vs. {{Java}}},
+  author = {LLC, YES IT LABS},
+  year = {2024},
+  month = feb,
+  journal = {Medium},
+  urldate = {2024-08-04},
+  url = {https://yesitlabs-marketing.medium.com/node-js-vs-java-which-one-is-better-for-backend-development-2f3e3a998125},
+  abstract = {Backend development is a crucial part of any web or mobile application, as it handles the logic, data, and functionality of the app{\dots}},
+  langid = {english},
+  file = {/home/douglas/snap/zotero-snap/common/Zotero/storage/5SVBDIQA/node-js-vs-java-which-one-is-better-for-backend-development-2f3e3a998125.html}
+}
+
+@article{state_art_autoscaling,
+	title = {{State of the Art on Microservices Autoscaling: An Overview}},
+	abstract = {The adoption of microservices architecture has taken on great proportions due to its benefits and popularization of containers driven tools, such as Kubernetes and Docker. Besides, the development of microservice-based applications is a complex task, specially because they can be composed of multiple heterogeneous parts. In particular, one of the main challenges is how to conduct the microservices autoscaling (i.e., adding or removing resources on demand), while still avoiding resource waste, such as CPU and memory. This paper presents the state of the art of approaches to solve the problem of microservices autoscaling, the main characteristics to be considered as well as the important future directions that need to be still investigated.},
+	author = {Joao Paulo K. S. Nunes and Thiago Bianchi and Anderson Y. Iwazaki and Elisa Yumi Nakagawa},
+	keywords = {benchmark, {HPC}, Kubernetes, open source, performance, self-hosted, serverless},
+    year = {2021}
+}
+
+@article{enh_autoscaling_aws,
+	title = {{Enhancement of Auto Scaling and Load Balancing using AWS}},
+	volume = {9},
+	abstract = {As the use of the internet is increasing the corporate migrating their business from traditional computing to cloud computing and thus the number of the user is increasing on cloud & load is also increasing. Thus to provide congestion-free and reliable on-demand service to client load balancing method is needed. Many algorithms are proposed for load balancing & auto-scaling to handle the load .we can use cloud service to make load efficient model in the cloud environment. This load efficient model will provide the load balancing, scaling capabilities and monitoring of solutions in the cloud environment. To achieve the above mentioned, we use public cloud services such as amazon’s EC2, ELB. This research is divided into four parts such as load balancing, auto-scaling, latency based routing, resource monitoring. We will implement the individual service and test while providing load from external software tool Putty and we will produce the result for efficient load balancing.},
+	journaltitle = {SKIT Research Journal},
+	author = {Mohit Gaur and Ankit Kumar and Pankaj Dadheech},
+    year = {2019}
+}
+
+@article{load_b_AWS,
+	title = {{Load Balanced Web Server on AWS Cloud}},
+	author = {Rajmani Bundela and Namrata Dhanda and Rajat Verma},
+    year = {2022}
+}
+
+@online{minikubeMinikubeStart_2024,
+  title = {Minikube Start},
+  author = {Minikube},
+  journal = {minikube},
+  urldate = {2024-08-06},
+  year = {2024},
+  abstract = {minikube is local Kubernetes, focusing on making it easy to learn and develop for Kubernetes. All you need is Docker (or similarly compatible) container or a Virtual Machine environment, and Kubernetes is a single command away: minikube start What you'll need 2 CPUs or more 2GB of free memory 20GB of free disk space Internet connection Container or virtual machine manager, such as: Docker, QEMU, Hyperkit, Hyper-V, KVM, Parallels, Podman, VirtualBox, or VMware Fusion/Workstation 1Installation Click on the buttons that describe your target platform.},
+  howpublished = {https://minikube.sigs.k8s.io/docs/start/},
+  langid = {english},
+  file = {/home/douglas/snap/zotero-snap/common/Zotero/storage/6LNLF82X/start.html}
+}
+
+@online{InstallSetKubectl_2024,
+  title = {Install and {{Set Up}} Kubectl on {{Linux}}},
+  urldate = {2024-08-06},
+  abstract = {Before you begin You must use a kubectl version that is within one minor version difference of your cluster. For example, a v1.30 client can communicate with v1.29, v1.30, and v1.31 control planes. Using the latest compatible version of kubectl helps avoid unforeseen issues. Install kubectl on Linux The following methods exist for installing kubectl on Linux: Install kubectl binary with curl on Linux Install using native package management Install using other package management Install kubectl binary with curl on Linux Download the latest release with the command:},
+  chapter = {docs},
+  author = {{Kubernetes}},
+  year = {2024},
+  howpublished = {https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/},
+  langid = {english},
+  file = {/home/douglas/snap/zotero-snap/common/Zotero/storage/WRU2MCVW/install-kubectl-linux.html}
+}
