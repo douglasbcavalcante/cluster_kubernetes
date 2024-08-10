@@ -4,9 +4,15 @@ Aluno: Douglas Bellomo Cavalcante
 
 Nº USP: 13079274
 
-01 de agosto de 2024
+10 de agosto de 2024
 
-Avaliação Intermediária
+# Avaliação Intermediária
+
+- Link dos documentos
+
+  * Artigo: [Artigo_Douglas_Elielder.pdf](Artigo_Douglas_Elielder.pdf)
+
+  * GitHub: [https://github.com/douglasbcavalcante/cluster_kubernetes](https://github.com/douglasbcavalcante/cluster_kubernetes)
 
 # 1) Escalamento Horizontal de PODs
 
@@ -332,7 +338,7 @@ https://s3.us-west-2.amazonaws.com/amazon-eks/cloudformation/2020-10-29/amazon-e
 ```
 ### 2.2.2) Criando o cluster usando o Role LabRole
 
-<img src="pictures/douglas-cluster.png"
+<img src="imagens_douglas/douglas-cluster.png"
 style="width:17cm;height:8.712cm" />
 
 ### 2.2.3) Atualizando o kubeconfig local
@@ -357,10 +363,10 @@ kubernetes ClusterIP 10.100.0.1 \<none\> 443/TCP 8m11s
 
 Nós adicionados via interface web do AWS EKS.
 
-<img src="pictures/nos.png"
+<img src="imagens_douglas/nos.png"
 style="width:17cm;height:8.259cm" />
 
-<img src="pictures/pods.png"
+<img src="imagens_douglas/pods.png"
 style="width:17cm;height:8.259cm" />
 
 ## 2.3) Fazendo o deploy da aplicação php-apache
@@ -687,10 +693,10 @@ php-apache Deployment/php-apache cpu: 37%/50% 1 10 7 8m1s
 ```
 ### 2.6.3) Observando no AWS EKS
 
-<img src="pictures/hpa-1.png"
+<img src="imagens_douglas/hpa-1.png"
 style="width:17cm;height:4.449cm" />
 
-<img src="pictures/hpa-2.png"
+<img src="imagens_douglas/hpa-2.png"
 style="width:17cm;height:8.292cm" />
 
 ### 2.6.4) Retirando a carga
@@ -738,7 +744,7 @@ php-apache Deployment/php-apache cpu: 0%/50% 1 10 3 16m
 
 php-apache Deployment/php-apache cpu: 0%/50% 1 10 1 16m
 ```
-<img src="pictures/hpa-events.png"
+<img src="imagens_douglas/hpa-events.png"
 style="width:17cm;height:7.768cm" />
 
 [](https://docs.aws.amazon.com/eks/latest/userguide/getting-started-console.html)
